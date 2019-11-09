@@ -1,0 +1,8 @@
+<keymap version="1" name="Default for macOS copy" parent="Mac OS X 10.5+">
+  <action id="Refresh" />
+  <action id="Rerun" />
+  <action id="SaveAs" />
+  <action id="SelectInProjectView">
+    <keyboard-shortcut first-keystroke="shift meta s" />
+  </action>
+</keymap>
