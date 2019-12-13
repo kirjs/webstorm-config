@@ -23,5 +23,6 @@
     <mask>*.css</mask>
     <mask>*runner*</mask>
     <mask>*html*</mask>
+    <mask>*monaco*</mask>
   </component>
 </application>
