@@ -33,4 +33,10 @@
       <option name="HTML_TEXT" value="true" />
     </context>
   </template>
+  <template name="fb10" value="const cities = {&#10;            'Moscow': {&#10;                points: 1,&#10;                icon: '🍹',&#10;            },&#10;            'New York': {&#10;                points: 1,&#10;                icon: '🗽',&#10;            },&#10;            'Tokyo': {&#10;                points: 1,&#10;                icon: '🗼',&#10;            },&#10;            'Cairo': {&#10;                points: 1,&#10;                icon: '🇪🇬',&#10;            },&#10;            'Piter': {&#10;                points: 1,&#10;                icon: '?',&#10;            },&#10;        };" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="ES6_STATEMENT" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
 </templateSet>
