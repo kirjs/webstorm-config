@@ -1,76 +1,24 @@
 <templateSet group="user">
-  <template name="fb1" value="&lt;g&gt;&#10;                    &lt;text x=&quot;10&quot; y=&quot;250&quot;&gt;медленно&lt;/text&gt;&#10;                    &lt;text x=&quot;490&quot; y=&quot;250&quot; text-anchor=&quot;end&quot;&gt;быстро&lt;/text&gt;&#10;                    &lt;text x=&quot;250&quot; y=&quot;20&quot;  text-anchor=&quot;middle&quot;&gt;Легко&lt;/text&gt;&#10;                    &lt;text x=&quot;250&quot; y=&quot;500&quot;  text-anchor=&quot;middle&quot;&gt;Сложно&lt;/text&gt;&#10;                &lt;/g&gt;" description="" toReformat="true" toShortenFQNames="true">
-    <context>
-      <option name="HTML_TEXT" value="true" />
-    </context>
-  </template>
   <template name="fb0" value="&lt;script type=&quot;module&quot;&gt;&#10;    import {html, render} from 'https://unpkg.com/lit-html?module';&#10;&lt;/script&gt;" description="" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="HTML_TEXT" value="true" />
     </context>
   </template>
-  <template name="fb2" value="&lt;circle r = 5 cx=&quot;${r.x}&quot; cy=&quot;${r.y}&quot; fill=&quot;black&quot;&gt;&lt;/circle&gt;" description="" toReformat="true" toShortenFQNames="true">
-    <context>
-      <option name="ECMAScript6" value="true" />
-      <option name="ES6_CLASS" value="false" />
-      <option name="ES6_EXPRESSION" value="false" />
-      <option name="ES6_STATEMENT" value="false" />
-      <option name="JAVA_SCRIPT" value="true" />
-      <option name="JSX_HTML" value="false" />
-      <option name="JS_CLASS" value="false" />
-      <option name="JS_EXPRESSION" value="false" />
-      <option name="JS_STATEMENT" value="false" />
-    </context>
-  </template>
-  <template name="fb3" value="const reactions = s.docs.map(d =&gt; d.data())&#10;                    .sort((a, b) =&gt; b.time.seconds - a.time.seconds || (b.time.nanoseconds - a.time.nanoseconds))&#10;                    .reduce((a, r) =&gt; {&#10;                        if (!a[r.uid]) {&#10;                            a[r.uid] = r;&#10;                        }&#10;                        return a;&#10;                    }, {});&#10;&#10;                state.reactions = Object.values(reactions);" description="" toReformat="true" toShortenFQNames="true">
+  <template name="fc1" value="function distance(a, b){&#10;            return Math.hypot(a.x - b.x, a.y - b.y);&#10;        }" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="ES6_STATEMENT" value="true" />
       <option name="JS_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="fb4" value="&lt;svg style=&quot;width: 500px;height: 200px;background: linear-gradient(#ffb800, yellow, #6cde00, yellow, #ffb800)&quot;&gt;&#10; &lt;text x = 250 y = 200 text-anchor=&quot;middle&quot;&gt;Сложно&lt;/text&gt;&#10;    &lt;text x = 250 y = 20 text-anchor=&quot;middle&quot;&gt;Легко&lt;/text&gt;&#10;${&#10;                (function () {&#10;                    const seconds = state.allReactions.map(r =&gt; r.time.seconds);&#10;                    const max = Math.max(...seconds);&#10;                    const min = Math.min(...seconds);&#10;                    const diff = max - min;&#10;&#10;                    return state.allReactions.map(r =&gt; {&#10;                        const x = (((r.time.seconds - min) / diff) || 0) * 500;&#10;                        const y = r.y / 2.5;&#10;&#10;                        return svg`&#10;                    &lt;circle r = 3 cx=&quot;${x}&quot; cy=&quot;${y}&quot; fill=&quot;black&quot;&gt;&lt;/circle&gt;`&#10;                    });&#10;                }())&#10;&#10;            }&#10;            &lt;/svg&gt;&#10; &lt;svg style=&quot;width: 500px;height: 200px;background: linear-gradient(#ffb800, yellow, #6cde00, yellow, #ffb800)&quot;&gt;&#10;    &lt;text x = 250 y = 200 text-anchor=&quot;middle&quot;&gt;Быстро&lt;/text&gt;&#10;    &lt;text x = 250 y = 20 text-anchor=&quot;middle&quot;&gt;Медленно&lt;/text&gt;&#10;                ${&#10;                (function () {&#10;                    const seconds = state.allReactions.map(r =&gt; r.time.seconds);&#10;                    const max = Math.max(...seconds);&#10;                    const min = Math.min(...seconds);&#10;                    const diff = max - min;&#10;&#10;                    return state.allReactions.map(r =&gt; {&#10;                        const x = (((r.time.seconds - min) / diff) || 0) * 500;&#10;                        const y = r.x / 2.5;&#10;&#10;                        return svg`&#10;                    &lt;circle r = 3 cx=&quot;${x}&quot; cy=&quot;${y}&quot; fill=&quot;black&quot;&gt;&lt;/circle&gt;`&#10;                    });&#10;                }())&#10;&#10;            }&#10;            &lt;/svg&gt;" description="" toReformat="true" toShortenFQNames="true">
+  <template name="fb2" value="const points = s.docs.map(d =&gt; d.data());&#10;&#10;            state.points = points.map(p =&gt; {&#10;                return {...p, min: Math.min(&#10;                    ...points.map(p2 =&gt; distance(p, p2))&#10;                        .filter(d =&gt; d &gt; 0)&#10;                    )};&#10;            }).sort((a,b) =&gt; b.min - a.min);" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="ES6_STATEMENT" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="fb3" value="&lt;h3&gt;Всего ${state.points.length}&lt;/h3&gt;&#10;            &lt;div style=&quot;display: grid; grid-template-columns: 20px 300px 200px;&quot;&gt;&#10;                ${state.points.map((p, i) =&gt; html`&#10;                 &lt;div&gt;${i}&lt;/div&gt;&#10;                 &lt;div&gt;${p.uid}&lt;/div&gt;&#10;                 &lt;div&gt;${p.min}&lt;/div&gt;&#10;                `)}&#10;            &lt;/div&gt;" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="HTML_TEXT" value="true" />
-    </context>
-  </template>
-  <template name="fb10" value="const cities = {&#10;            'Moscow': {&#10;                points: 1,&#10;                icon: '🍹',&#10;            },&#10;            'New York': {&#10;                points: 1,&#10;                icon: '🗽',&#10;            },&#10;            'Tokyo': {&#10;                points: 1,&#10;                icon: '🗼',&#10;            },&#10;            'Cairo': {&#10;                points: 1,&#10;                icon: '🇪🇬',&#10;            },&#10;            'Piter': {&#10;                points: 1,&#10;                icon: '?',&#10;            },&#10;        };" description="" toReformat="true" toShortenFQNames="true">
-    <context>
-      <option name="ES6_STATEMENT" value="true" />
-      <option name="JS_STATEMENT" value="true" />
-    </context>
-  </template>
-  <template name="fc0" value=" const emojis = ['🦠', '💊', '🐶'];&#10;&#10;    function chooseSide(uid) {&#10;        return Math.floor((parseInt(uid.substr(0, 1), 36) / 12));&#10;    }&#10;&#10;    const citiesList = [&#10;        {&#10;            name: 'Moscow',&#10;            points: 1,&#10;            icon: '🍹',&#10;        },&#10;        {&#10;            name: 'New York',&#10;            points: 2,&#10;            icon: '🗽',&#10;        },&#10;        {&#10;            name: 'Tokyo',&#10;            points: 3,&#10;            icon: '🗼',&#10;        },&#10;        {&#10;            name: 'Minsk',&#10;            points: 4,&#10;            icon: '🇧🇾',&#10;        },&#10;        {&#10;            name: 'Rio De Janeiro',&#10;            points: 5,&#10;            icon: '🌴',&#10;        },&#10;        {&#10;            name: 'Lagos',&#10;            points: 6,&#10;            icon: '🇳🇬',&#10;        },&#10;        {&#10;            name: 'Sri Jayawardenepura Kotte',&#10;            points: 8,&#10;            icon: '🇱🇰',&#10;        },&#10;    ];" description="" toReformat="true" toShortenFQNames="true">
-    <context>
-      <option name="ES6_STATEMENT" value="true" />
-      <option name="JS_STATEMENT" value="true" />
-    </context>
-  </template>
-  <template name="fc1" value="function wins(a, b) {&#10;            return (((a - b + 3) % 3) === 1);&#10;        }&#10;&#10;        function calcScores(docs) {&#10;            const cities = {};&#10;            state.scores = [];&#10;            const uids = {};&#10;&#10;            for (const d of docs) {&#10;                if (!cities[d.i]) {&#10;                    cities[d.i] = {&#10;                        score: 1,&#10;                        side: d.side,&#10;                        time: d.time ? d.time.seconds : +Date,&#10;                    };&#10;                } else {&#10;                    if (cities[d.i].side === d.side) {&#10;                        cities[d.i].score++;&#10;                    } else {&#10;&#10;                        if (wins(d.side, cities[d.i].side)) {&#10;                            cities[d.i].score--;&#10;                            if (cities[d.i].score === 0) {&#10;&#10;&#10;                                if (d.time) {&#10;                                    uids[d.uid] = uids[d.uid] || 0;&#10;                                    uids[d.uid]++;&#10;&#10;                                    const score = d.time.seconds - cities[d.i].time;&#10;                                    state.scores[d.side] = state.scores[d.side] || 0;&#10;                                    state.scores[d.side] += score * citiesList[d.i].points;&#10;&#10;                                }&#10;&#10;                                cities[d.i].score = 1;&#10;                                cities[d.i].side = d.side;&#10;                                cities[d.i].time = d.time ? d.time.seconds : +Date&#10;                            }&#10;                        } else {&#10;                        }&#10;                    }&#10;&#10;                }&#10;            }&#10;&#10;            const now = firebase.firestore.Timestamp.now().seconds&#10;            for (const [i, c] of Object.entries(cities)) {&#10;                const score = now - c.time;&#10;                state.scores[c.side] = state.scores[c.side] || 0;&#10;                state.scores[c.side] += score * citiesList[i].points;&#10;            }&#10;&#10;            state.heroes = Object.entries(uids).map(([uid, score]) =&gt; ({score, uid})).sort((a, b) =&gt; b.score - a.score);&#10;            state.cities = cities;&#10;        }" description="" toReformat="true" toShortenFQNames="true">
-    <context>
-      <option name="ES6_STATEMENT" value="true" />
-      <option name="JS_STATEMENT" value="true" />
-    </context>
-  </template>
-  <template name="fc2" value="&lt;div style=&quot;display: grid; font-size: 30px;grid-row-gap: 20px;grid-column-gap: 20px; grid-template-columns:  30px fit-content(200px) 30px auto&quot;&gt;&#10;         ${citiesList.map((c, i) =&gt;&#10;                html`&#10;            &lt;div&gt;${c.icon}&lt;/div&gt;&#10;            &lt;div&gt;${c.name}&lt;/div&gt;&#10;            &lt;div style=&quot;background: #9cc8dd;border-radius: 50%;text-align:center;width: 40px;height: 40px;&quot;&gt;${c.points}&lt;/div&gt;&#10;            &lt;button @click=&quot;${e =&gt; makeMove(i)}&quot; style=&quot;background: white;font-size: 40px;border: 1px #ddd solid&quot;&gt;&#10;              ${state.cities &amp;&amp; state.cities[i] ? emojis[state.cities[i].side].repeat(state.cities[i].score) : 'Available'}&#10;            &lt;/button&gt;&#10;            `&#10;            )}&#10;         &lt;/div&gt;" description="" toReformat="true" toShortenFQNames="true">
-    <context>
-      <option name="HTML_TEXT" value="true" />
-    </context>
-  </template>
-  <template name="fc3" value="&lt;h2&gt;scores&lt;/h2&gt;&#10;         &lt;div class=&quot;score&quot; style=&quot;display: grid; grid-template-columns: 100px 100px; font-size: 40px;&quot;&gt;&#10;            ${&#10;                (state.scores || []).map((s, i) =&gt; {&#10;                    return  html`&#10;                    &lt;div&gt;${emojis[i]}&lt;/div&gt;&#10;                    &lt;div&gt;${s}&lt;/div&gt;&#10;&#10;                 `&#10;                })&#10;            }&#10;        &lt;/div&gt;" description="" toReformat="true" toShortenFQNames="true">
-    <context>
-      <option name="HTML_TEXT" value="true" />
-    </context>
-  </template>
-  <template name="fcside" value="function chooseSide(uid) {&#10;            return Math.floor((parseInt(uid.substr(0, 1), 36) / 12));&#10;        }" description="" toReformat="true" toShortenFQNames="true">
-    <context>
-      <option name="ES6_STATEMENT" value="true" />
-      <option name="JS_STATEMENT" value="true" />
-    </context>
-  </template>
-  <template name="fcemojis" value="const emojis = ['🦠', '💊', '?'];" description="" toReformat="true" toShortenFQNames="true">
-    <context>
-      <option name="ES6_STATEMENT" value="true" />
-      <option name="JS_STATEMENT" value="true" />
     </context>
   </template>
 </templateSet>
