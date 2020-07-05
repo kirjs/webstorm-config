@@ -4,19 +4,19 @@
       <option name="HTML_TEXT" value="true" />
     </context>
   </template>
-  <template name="fc1" value="function distance(a, b){&#10;            return Math.hypot(a.x - b.x, a.y - b.y);&#10;        }" toReformat="true" toShortenFQNames="true">
+  <template name="fc1" value="function distance(a, b){&#10;            return Math.hypot(a.x - b.x, a.y - b.y);&#10;        }" description="" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="ES6_STATEMENT" value="true" />
       <option name="JS_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="fb2" value="const points = s.docs.map(d =&gt; d.data());&#10;&#10;            state.points = points.map(p =&gt; {&#10;                return {...p, min: Math.min(&#10;                    ...points.map(p2 =&gt; distance(p, p2))&#10;                        .filter(d =&gt; d &gt; 0)&#10;                    )};&#10;            }).sort((a,b) =&gt; b.min - a.min);" toReformat="true" toShortenFQNames="true">
+  <template name="fb2" value="const points = s.docs.map(d =&gt; d.data());&#10;&#10;            state.points = points.map(p =&gt; {&#10;                return {...p, min: Math.min(&#10;                    ...points.map(p2 =&gt; distance(p, p2))&#10;                        .filter(d =&gt; d &gt; 0)&#10;                    )};&#10;            }).sort((a,b) =&gt; b.min - a.min);" description="" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="ES6_STATEMENT" value="true" />
       <option name="JS_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="fb3" value="&lt;h3&gt;Всего ${state.points.length}&lt;/h3&gt;&#10;            &lt;div style=&quot;display: grid; grid-template-columns: 20px 300px 200px;&quot;&gt;&#10;                ${state.points.map((p, i) =&gt; html`&#10;                 &lt;div&gt;${i}&lt;/div&gt;&#10;                 &lt;div&gt;${p.uid}&lt;/div&gt;&#10;                 &lt;div&gt;${p.min}&lt;/div&gt;&#10;                `)}&#10;            &lt;/div&gt;" toReformat="true" toShortenFQNames="true">
+  <template name="fb3" value="&lt;h3&gt;Всего ${state.points.length}&lt;/h3&gt;&#10;            &lt;div style=&quot;display: grid; grid-template-columns: 20px 300px 200px;&quot;&gt;&#10;                ${state.points.map((p, i) =&gt; html`&#10;                 &lt;div&gt;${i}&lt;/div&gt;&#10;                 &lt;div&gt;${p.uid}&lt;/div&gt;&#10;                 &lt;div&gt;${p.min}&lt;/div&gt;&#10;                `)}&#10;            &lt;/div&gt;" description="" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="HTML_TEXT" value="true" />
     </context>
