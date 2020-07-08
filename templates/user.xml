@@ -4,7 +4,7 @@
       <option name="HTML_TEXT" value="true" />
     </context>
   </template>
-  <template name="fc1" value="function distance(a, b){&#10;            return Math.hypot(a.x - b.x, a.y - b.y);&#10;        }" description="" toReformat="true" toShortenFQNames="true">
+  <template name="fb1" value="function distance(a, b){&#10;            return Math.hypot(a.x - b.x, a.y - b.y);&#10;        }" description="" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="ES6_STATEMENT" value="true" />
       <option name="JS_STATEMENT" value="true" />
