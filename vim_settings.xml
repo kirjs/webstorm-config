@@ -1,10 +1,45 @@
 <application>
-  <component name="VimSettings">
-    <state version="5" enabled="false" />
-    <shortcut-conflicts />
+  <component name="VimEditorSettings">
     <editor>
       <key-repeat enabled="true" />
     </editor>
+  </component>
+  <component name="VimHistorySettings">
+    <history>
+      <history-search />
+      <history-cmd />
+      <history-expr />
+      <history-input />
+    </history>
+  </component>
+  <component name="VimKeySettings">
+    <shortcut-conflicts />
+  </component>
+  <component name="VimMarksSettings">
+    <globalmarks />
+    <filemarks>
+      <file name="/Dummy.txt" timestamp="1571354172805">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/code/codelab/apps/codelab/tsconfig.json" timestamp="1571489129231">
+        <mark key="[" line="6" column="17" />
+        <mark key="]" line="6" column="22" />
+        <mark key="." line="6" column="22" />
+      </file>
+    </filemarks>
+    <jumps />
+  </component>
+  <component name="VimRegisterSettings">
+    <registers />
+  </component>
+  <component name="VimSearchSettings">
+    <search>
+      <last-dir>0</last-dir>
+      <show-last>false</show-last>
+    </search>
+  </component>
+  <component name="VimSettings">
+    <state version="6" enabled="false" />
     <notifications>
       <idea-join enabled="false" />
       <idea-put enabled="false" />
