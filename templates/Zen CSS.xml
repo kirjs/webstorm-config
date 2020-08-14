@@ -1,7 +1,4 @@
 <templateSet group="Zen CSS">
-  <template name="d:ib" value="display:inline-block;" description="display:inline-block;" toReformat="true" toShortenFQNames="true">
-    <context />
-  </template>
   <template name="h" value="height: $END$;" description="height:...;" toReformat="true" toShortenFQNames="true">
     <context />
   </template>
