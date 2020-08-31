@@ -26,4 +26,19 @@
       <option name="HTML_TEXT" value="true" />
     </context>
   </template>
+  <template name="ts1" value="&lt;TSNode node={$END$} /&gt;" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JSX_HTML" value="false" />
+      <option name="JS_CLASS" value="false" />
+      <option name="JS_EXPRESSION" value="false" />
+      <option name="JS_STATEMENT" value="false" />
+      <option name="VUE_COMPONENT_DESCRIPTOR" value="false" />
+      <option name="VUE_INSIDE_TAG" value="false" />
+      <option name="VUE_SCRIPT" value="false" />
+      <option name="VUE_TEMPLATE" value="false" />
+      <option name="VUE_TOP_LEVEL" value="false" />
+      <option name="Vue" value="true" />
+    </context>
+  </template>
 </templateSet>
