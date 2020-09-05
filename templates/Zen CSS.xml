@@ -5,6 +5,9 @@
   <template name="mb" value="margin-bottom: $END$;" description="margin-bottom:...;" toReformat="true" toShortenFQNames="true">
     <context />
   </template>
+  <template name="p" value="padding: $END$;" description="padding:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
   <template name="ac" value="align-content: $END$;" description="align-content:...;" toReformat="true" toShortenFQNames="false">
     <context />
   </template>
