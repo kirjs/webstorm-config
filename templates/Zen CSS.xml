@@ -5,6 +5,9 @@
   <template name="d:b" value="display:block;" description="display:block;" toReformat="true" toShortenFQNames="true">
     <context />
   </template>
+  <template name="mt" value="margin-top: $END$;" description="margin-top:...;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
   <template name="mb" value="margin-bottom: $END$;" description="margin-bottom:...;" toReformat="true" toShortenFQNames="true">
     <context />
   </template>
