@@ -1,26 +1,5 @@
 <templateSet group="Zen CSS">
-  <template name="pos:a" value="position:absolute;" description="position:absolute;" toReformat="true" toShortenFQNames="true">
-    <context />
-  </template>
-  <template name="d:b" value="display:block;" description="display:block;" toReformat="true" toShortenFQNames="true">
-    <context />
-  </template>
-  <template name="mt" value="margin-top: $END$;" description="margin-top:...;" toReformat="true" toShortenFQNames="true">
-    <context />
-  </template>
   <template name="mb" value="margin-bottom: $END$;" description="margin-bottom:...;" toReformat="true" toShortenFQNames="true">
-    <context />
-  </template>
-  <template name="ml" value="margin-left: $END$;" description="margin-left:...;" toReformat="true" toShortenFQNames="true">
-    <context />
-  </template>
-  <template name="p" value="padding: $END$;" description="padding:...;" toReformat="true" toShortenFQNames="true">
-    <context />
-  </template>
-  <template name="w" value="width: $END$;" description="width:...;" toReformat="true" toShortenFQNames="true">
-    <context />
-  </template>
-  <template name="ac" value="align-content: $END$;" description="align-content:...;" toReformat="true" toShortenFQNames="false">
     <context />
   </template>
 </templateSet>
