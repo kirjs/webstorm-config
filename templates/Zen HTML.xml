@@ -6,4 +6,7 @@
     <variable name="VAR0" expression="" defaultValue="&quot;&quot;" alwaysStopAt="true" />
     <context />
   </template>
+  <template name="cap" value="&lt;caption&gt;$END$&lt;/caption&gt;" description="&lt;caption&gt;...&lt;/caption&gt;" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
 </templateSet>
