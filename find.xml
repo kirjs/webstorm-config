@@ -9,6 +9,7 @@
     <option name="REGULAR_EXPRESSIONS" value="true" />
     <option name="LOCAL_REGULAR_EXPRESSIONS" value="true" />
     <option name="SEARCH_SCOPE" value="All Places" />
+    <option name="FILE_MASK" value="*css*" />
     <mask>*.xml</mask>
     <mask>*.ng</mask>
     <mask>*.htm</mask>
@@ -30,5 +31,6 @@
     <mask>*.test.tsx</mask>
     <mask>*.module.scss</mask>
     <mask>*dial*</mask>
+    <mask>*css*</mask>
   </component>
 </application>
